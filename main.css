@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Big+Shoulders+Display:wght@400;500;600;700&family=Cairo:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,200;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Hanken+Grotesk:ital,wght@0,300;0,500;0,600;0,700;0,800;1,500&family=Inter:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Karla:wght@400;700&family=Kumbh+Sans:wght@400;700&family=League+Spartan:wght@400;500;700&family=Lexend+Deca&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Outfit&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:wght@500;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+
+    --Orange: hsl(25, 97%, 53%);    
+    --White: hsl(0, 0%, 100%);
+    --Light-Grey: hsl(217, 12%, 63%);
+    --Medium-Grey: hsl(216, 12%, 54%);
+    --Dark-Blue: hsl(213, 19%, 18%);
+    --Very-Dark-Blue: hsl(216, 12%, 8%);
+    --with-blue: hsl(212, 26%, 24%);
+    
+}
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: "Overpass", sans-serif;
+    font-size: 15px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+.Cnteiner , .front , .back{
+    width: 360px;
+    height: 400px;
+    
+}
+.front,
+.back {
+    position: absolute;
+    backface-visibility: hidden;
+    
+}
+.front {
+    transform: rotateY(0);
+    z-index: 2;
+}
+.back{
+    transform: rotateY(180deg);
+}
+.info{
+    display: grid;
+    align-items: center;
+    gap: 10px;
+}
+.info{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.6s;
+    
+}
+.front , .back {
+    background-color: var(--Dark-Blue);
+    border-radius: 30px;
+    border: none;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+
+}
+
+.Cnteiner .info .stat  {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    margin: 10px  ;
+    text-align: center;
+    background-color: var(--with-blue);
+    align-items: center;
+    display: grid;
+    justify-content: center;
+}
+.Cnteiner .info .stat img{
+    width: 20px;
+}
+.front .kwashen{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 25px 10px 20px 10px;
+    gap: 10px;
+}
+.front .kwashen h1 {
+    color: var(--White);
+    font-weight:400;
+}
+.front .kwashen span{
+    color: var(--Medium-Grey);
+}
+.info .front .rating-container {
+    display: flex;
+    gap: 15px;
+    border-radius: 50px;
+    justify-content: center;
+    border: none;
+
+}
+.info .front .rating-container .star{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--with-blue);
+    display: grid;
+    justify-content: space-evenly;
+    cursor: pointer;
+    text-align: center;
+    align-content: space-around;
+}
+.star:hover {
+    background-color: var(--Orange);
+}
+.btn {
+    display: flex;
+    margin: 25px 0 10px;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+
+}
+.btn button{
+    width: 95%;
+    height: 50px;   
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 50px;
+    border: none;
+    font-size:15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--Orange);
+    cursor: pointer;
+}
+.explanation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.explanation img {
+    margin-top: 15px;
+    margin-bottom: 30px; /* İmaj ile yazı arasındaki boşluğu ayarlar */
+    width: 50%;
+}
+.explanation .puan{
+    display: flex;
+    width: 70%;
+    height: 2.5rem;
+    font-size: 15px;
+    border-radius: 50px;
+    background-color: var(--with-blue);
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--Orange);
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.explanation h1{
+    color: var(--White);
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.explanation p {
+    color: var(--Light-Grey);
+    font-weight: 400;
+    font-size: 15px;
+    word-spacing: 1px; /* İstenen boşluğu piksel cinsinden belirtin */
+    letter-spacing: 0.5px; /* İstenen boşluğu piksel cinsinden belirtin */
+}
