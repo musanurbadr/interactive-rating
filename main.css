@@ -16,43 +16,36 @@
     padding: 0%;
     box-sizing: border-box;
     font-family: "Overpass", sans-serif;
-}
+    font-size: 15px;
 
-body{
-font-size: 15px;
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
-
-    justify-content: center;
 }
-.Cnteiner , .front {
-    width: 350px;
-    height: auto;
-    
-}
-.hidden{
+.hidden {
     display: none;
 }
-.front{
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Very-Dark-Blue);
+}
+
+/* .front{
     position: absolute;
     backface-visibility: hidden;
-    
-}
-.info{
-    display: grid;
-    align-items: center;
-    gap: 10px;
-}
-.info{
+} */
+
+/* .info{
     position: relative;
     transform-style: preserve-3d;    
-}
-.front , .back {
+} */
+.Cnteiner  {
     background-color: var(--Dark-Blue);
     border-radius: 30px;
     border: none;
     padding: 20px;
+    width: 350px;
+
 }
 
 .Cnteiner .info .stat  {
@@ -80,17 +73,18 @@ font-size: 15px;
 }
 .front .kwashen h1 {
     color: var(--White);
-    font-weight:400;
+    font-weight:700;
     line-height: 1.5; /* Öğenin içeriğinin 1.5 katı yükseklikte bir satır arası boşluk bırakır */
+    font-size: 20px;
 
 }
-.front {
+/* .info {
     display: grid;
-    align-items: center;
     gap: 10px;
-}
+} */
 .front .kwashen span{
     color: var(--Medium-Grey);
+    margin-bottom: 15px;
 }
 .info .front .rating-container {
     display: flex;
@@ -137,15 +131,16 @@ font-size: 15px;
     font-size:15px;
     font-weight: 400;
     text-transform: uppercase;
-    color: var(--Orange);
+    color: var(--White);
     cursor: pointer;
+    background-color: var(--Orange);
 }
-/* .btn button:active,
+
+.btn button:active,
 .btn button:hover{
-    .back{
-        transform: rotateY(180deg);
-    }
-} */
+    background-color: var(--White);
+    color: var(--Orange);
+} 
 .explanation {
     display: flex;
     flex-direction: column;
@@ -157,14 +152,14 @@ font-size: 15px;
 .explanation img {
     margin-top: 15px;
     margin-bottom: 30px; /* İmaj ile yazı arasındaki boşluğu ayarlar */
-    width: 50%;
+    width: 57.85%;
 }
 .explanation .puan{
-    display: flex;
+
     width: 70%;
     height: 2.5rem;
     font-size: 15px;
-    border-radius: 50px;
+    border-radius: 2rem;
     background-color: var(--with-blue);
     font-weight: 400;
     text-transform: uppercase;
@@ -186,26 +181,6 @@ font-size: 15px;
     word-spacing: 1px; /* İstenen boşluğu piksel cinsinden belirtin */
     letter-spacing: 0.5px; /* İstenen boşluğu piksel cinsinden belirtin */
 }
-
-
-.btn {
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  #onclick:hover + .back {
-    background-color: lightgray;
-  }
-
-  .back {
-    display: none;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-  }
-
-
-
 .rating-star {
     cursor: pointer;
 }
@@ -213,4 +188,37 @@ font-size: 15px;
 .rating-star:hover,
 .rating-star.active {
     color: orange;
+}
+
+.checked{
+    background-color: var(--Orange) !important;
+    color: var(--White) !important;
+}
+
+/* Ekran genişliği 600 pikselden büyükse */
+@media screen and (min-width:375px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--Very-Dark-Blue);
+    }
+    .Cnteiner{
+        display: grid;
+    }
+}
+
+/* Ekran genişliği 600 pikselden küçükse */
+@media screen and (max-width: 599px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--Very-Dark-Blue);
+        align-content: center;
+        flex-wrap: nowrap;
+        flex-direction: row-reverse;
+    }
 }
